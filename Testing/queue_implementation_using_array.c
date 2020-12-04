@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<stdbool.h>
-#define MAX 100
+#define MAX 5
 
 int queue[MAX];
 int front =-1;
@@ -17,7 +17,7 @@ bool isFull(){
 }
 
 bool isEmpty(){
-	if(rear==-1){
+	if(rear==-1 || front == MAX-1 || rear == front){
 		return 1;
 	}
 	else{
@@ -25,14 +25,34 @@ bool isEmpty(){
 	}
 }
 
+bool isEnd(){
+	if(isFull()){
+		if(front == rear){
+			return 1;
+		}
+	}
+	return 0;
+}
+
+void reset(){
+	front=-1;
+	rear=-1;
+}
+
 void enqueue(){
 	int value;
-	if(isFull()){
+	printf("Enter the number : ");
+	scanf("%d",&value);
+	
+	if(isEnd()){
+		reset();
+		rear=rear+1;
+		queue[rear]=value;
+	}
+	else if(isFull()){
 		printf("Queue is full \n");
 	}
 	else{
-		printf("Enter the number : ");
-		scanf("%d",&value);
 		rear=rear+1;
 		queue[rear]=value;
 	}
@@ -43,16 +63,9 @@ void dequeue(){
 	if(isEmpty()){
 		printf("Queue is empty \n");
 	}
-	else if(!rear==0){
-		printf("%d is dequeue \n",queue[front+1]);
-		for(i=front+1;i<rear;i++){
-			queue[i]=queue[i+1];
-		}
-		rear=rear-1;
-	}
 	else{
 		printf("%d is dequeue \n",queue[front+1]);
-		rear=rear-1;
+		front=front+1;
 	}
 }
 
