@@ -69,18 +69,47 @@ else{
 
 
 void search(){
+	int fpos=-1;
 	printf("\nEnter the value to search\n");
 	scanf("%d",&n);
-	for(i=0;i<MAX;i++){
-		if(queue[i]==n){
+	
+		if(front==-1){
+ 	printf("\n***********************QUEUE UNDERFLOW***************\n");
+ 	}
+ 	else{
+	int front_pos=front,rear_pos=rear;
+	if(front_pos>rear_pos){
+		while(front_pos>rear_pos)
+			{
+			if(queue[front_pos]==n){
 			flag=1;
+			fpos=front_pos+1;
 			break;
 			}
+				
+				front_pos=((front_pos+1))%MAX;
+			}	
 	}
-	if(flag==1)
-	printf("\nElement is found at %d position\n",i+1);
+	if(front_pos<=rear_pos){
+		for(i=front_pos;i<=rear_pos;i++){
+				if(queue[i]==n){
+			flag=1;
+			fpos=i+1;
+			break;
+			}
+		}
+	
+	}
+
+	}
+	
+	
+	
+	if(flag==1 && fpos>=0)
+		printf("\nElement is found at %d position\n",fpos);
 	else
-	printf("\nElement is not found\n");
+		printf("\nElement is not found\n");
+	
 }
 
 
@@ -107,25 +136,3 @@ void display(){
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
