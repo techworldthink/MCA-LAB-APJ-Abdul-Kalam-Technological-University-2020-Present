@@ -69,7 +69,6 @@ else{
 
 
 void search(){
-	int fpos=-1;
 	printf("\nEnter the value to search\n");
 	scanf("%d",&n);
 	
@@ -83,7 +82,6 @@ void search(){
 			{
 			if(queue[front_pos]==n){
 			flag=1;
-			fpos=front_pos+1;
 			break;
 			}
 				
@@ -94,7 +92,6 @@ void search(){
 		for(i=front_pos;i<=rear_pos;i++){
 				if(queue[i]==n){
 			flag=1;
-			fpos=i+1;
 			break;
 			}
 		}
@@ -105,8 +102,8 @@ void search(){
 	
 	
 	
-	if(flag==1 && fpos>=0)
-		printf("\nElement is found at %d position\n",fpos);
+	if(flag==1)
+		printf("\nElement is found ");
 	else
 		printf("\nElement is not found\n");
 	
