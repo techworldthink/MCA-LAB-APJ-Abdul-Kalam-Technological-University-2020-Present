@@ -29,3 +29,14 @@ for i in string:
     if(i == search):
         count=count+1
 print(count)"""
+
+"""
+str = input("Enter the string: ")
+str = str.lower()
+str_list = list(str.split(" "))
+print(str_list)
+str_set = list(set(str_list))
+print(str_set)
+for word in str_set:
+    print(word, " = ", str_list.count(word))
+"""
