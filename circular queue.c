@@ -1,10 +1,10 @@
 #include<stdio.h>
-#define MAX 5
+#define MAX 10
 void enqueue();
 void dequeue();
 void search();
 void display();
-int c,queue[50],item,front=-1,rear=-1,i,n,flag=0;
+int c,queue[MAX],item,front=-1,rear=-1,i,n,flag=0;
 
  void main(){
 	 do
