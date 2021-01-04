@@ -1,6 +1,6 @@
 #This program evaluates n!
 
-def factorial(fact):
+def factorial(n):
     fact=1
     if n==0:
         print(n,"!=",fact)
