@@ -4,87 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-        }
+    <link href="library/exer_5.css" type="text/css" rel="stylesheet">
 
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .column {
-            float: left;
-            padding: 10px;
-            height:100vh;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        header {
-            background: rgb(51, 53, 54);
-            color: white;
-            margin: 0;
-            padding: .1em;
-        }
-
-        .img {
-            width: 100%;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        .left {
-            background: rgb(51, 53, 54);
-            color: white;
-            width: 25%
-        }
-
-        .right {
-            background-color: rgb(212, 210, 210);
-            width: 75%;
-        }
-
-        #pcss {
-            font-size: 15px;
-            margin-left: 5px;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
-        iframe {
-            width: 100%;
-            margin: 0;
-            height:100%;
-        }
-
-        footer {
-            height: 30px;
-            width: 100%;
-            margin:0;
-            background-color:rgb(39, 69, 65);
-        }
-    </style>
 </head>
 
 <body>
     <header>
+         <marquee id="head_marque" direction="right" behavior="alternate" scrollamount="8" onmouseover="this.stop()" onmouseout="this.start()">
         <h1>Welcome To the World</h1>
+    </marquee>
     </header>
     <div class="img">
         <img src="images/bg2.png">
@@ -93,13 +21,19 @@
     <div class="row">
         <div class="left column">
             <h5 id="pcss">Properties of CSS</h5>
+            <marquee direction="up" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
             <ul>
-                <li><a href="job_application.html" target="content"> acdc </a> </li>
-                <li><a href="exercise-3-index.html" target="content">dcdcd</a> </li>
-                <li><a href="exercise-3-home.html" target="content">eff </a> </li>
-                <li><a href="exercise-1_index.html" target="content">frfrfr </a> </li>
-                <li><a href="" target="content">tytyh </a> </li>
+                <li><a href="exer_5_content/p.html" target="content">CSS Properties Reference </a> </li>
+                <li><a href="exer_5_content/s.html" target="content">CSS Selectors Reference</a> </li>
+                <li><a href="exer_5_content/f.html" target="content">CSS Functions Reference </a> </li>
+                <li><a href="exer_5_content/a.html" target="content">CSS Animatable Reference </a> </li>
+                <li><a href="exer_5_content/au.html" target="content">CSS Aural Reference </a> </li>
+                <li><a href="exer_5_content/u.html" target="content">CSS Units</a> </li>
+                <li><a href="exer_5_content/c.html" target="content">CSS Color Reference </a> </li>
+                <li><a href="exer_5_content/d.html" target="content">CSS Default Values </a> </li>
+                <li><a href="exer_5_content/b.html" target="content">CSS Browser Support </a> </li>
             </ul>
+            </marquee>
         </div>
         <div class="right column">
             <iframe name="content"></iframe>
@@ -110,7 +44,7 @@
     <footer>
         
     </footer>
-
+<script src="library/js.js"></script>
 </body>
 
 </html>
