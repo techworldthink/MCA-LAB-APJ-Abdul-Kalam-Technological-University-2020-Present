@@ -84,6 +84,7 @@
         var init_content = "<table BORDER=1 id='calender'><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>"
         var year_get = document.getElementById("year_get").value;
         var month_get = document.getElementById("month_get").value;
+        month_get -=1;
 
         var date = new Date(year_get,month_get);
         var day = date.getDay();
