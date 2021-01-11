@@ -9,6 +9,7 @@
             text-align: center;
             border-bottom: 2px solid black;
             padding-bottom: 2em;
+           
         }
 
         h2 {
@@ -16,7 +17,10 @@
             text-align: center;
             margin-top: 2em;
             width: 100%;
-            background-color: aqua;
+            padding:5px;
+           color: #222324;
+           font-family:'Courier New', Courier, monospace;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
         }
 
         table,
@@ -35,14 +39,26 @@
         }
 
         .selector {
-            float: left;
-            margin-left: 1em;
+            padding:.5em;
+            background-color:#002607;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius:5px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        li{
+
+        li {
             text-align: left;
+            margin-top: 5px;
+            padding:10px;
         }
-        ul{
-            border: 1px solid red;
+
+        ul {
+           
+            background-color: #1a1b1c;
+            color: white;
+            
         }
     </style>
 </head>
@@ -80,8 +96,8 @@
         </table>
 
 
-        <input type="button" value="length" class="selector" onclick="string_func()">
-      
+        <input type="button" value="Generate" class="selector" onclick="string_func()">
+
         <br><br>
         <ul id="output"> </ul>
     </div>
@@ -99,25 +115,25 @@
             let li_O = '<li>';
             let li_C = '</li>';
             let list_items;
-            list_items = li_O+'Length of string is  : '+input.length+li_C;
-            list_items += li_O+'First index of '+search+' is '+ input.indexOf(search) +li_C;
-            list_items += li_O+'Last index of '+search+' is '+ input.lastIndexOf(search) +li_C;
-            list_items += li_O+'Index with search starting position 5 of '+search+' is '+ input.indexOf(search,5) +li_C;
-            list_items += li_O+'Search '+search+' is '+ input.search(search) +li_C;
-            list_items += li_O+'Slice['+ slice_s+' : ] is '+ input.slice(slice_s) +li_C;
-            list_items += li_O+'Slice['+ slice_s+' : '+slice_e+'] is '+ input.slice(slice_s,slice_e) +li_C;
-            list_items += li_O+'Substring['+ slice_s+' : '+slice_e+']  is '+ input.substring(slice_s,slice_e) +li_C;
-            list_items += li_O+'Substr['+ slice_s+' :] is '+ input.substr(slice_s) +li_C;
-            list_items += li_O+'Substr['+ slice_s+' :] with length '+slice_e+' is '+ input.substr(slice_s,slice_e) +li_C;
-            list_items += li_O+'replace '+replace_f+' with '+replace_s+' is ' + input.replace(replace_f,replace_s) +li_C;
-            list_items += li_O+'Uppercase  :  '+ input.toUpperCase()+li_C;
-            list_items += li_O+'lowercase  :  '+ input.toLowerCase()+li_C;
+            list_items = li_O + 'Length of string is  : ' + input.length + li_C;
+            list_items += li_O + 'First index of ' + search + ' is ' + input.indexOf(search) + li_C;
+            list_items += li_O + 'Last index of ' + search + ' is ' + input.lastIndexOf(search) + li_C;
+            list_items += li_O + 'Index with search starting position 5 of ' + search + ' is ' + input.indexOf(search, 5) + li_C;
+            list_items += li_O + 'Search ' + search + ' is ' + input.search(search) + li_C;
+            list_items += li_O + 'Slice[' + slice_s + ' : ] is ' + input.slice(slice_s) + li_C;
+            list_items += li_O + 'Slice[' + slice_s + ' : ' + slice_e + '] is ' + input.slice(slice_s, slice_e) + li_C;
+            list_items += li_O + 'Substring[' + slice_s + ' : ' + slice_e + ']  is ' + input.substring(slice_s, slice_e) + li_C;
+            list_items += li_O + 'Substr[' + slice_s + ' :] is ' + input.substr(slice_s) + li_C;
+            list_items += li_O + 'Substr[' + slice_s + ' :] with length ' + slice_e + ' is ' + input.substr(slice_s, slice_e) + li_C;
+            list_items += li_O + 'replace ' + replace_f + ' with ' + replace_s + ' is ' + input.replace(replace_f, replace_s) + li_C;
+            list_items += li_O + 'Uppercase  :  ' + input.toUpperCase() + li_C;
+            list_items += li_O + 'lowercase  :  ' + input.toLowerCase() + li_C;
 
 
-           // console.log(slice_e);
-            document.getElementById('output').innerHTML=(list_items);
-            
-        
+            // console.log(slice_e);
+            document.getElementById('output').innerHTML = (list_items);
+
+
         }
     </script>
 </body>
