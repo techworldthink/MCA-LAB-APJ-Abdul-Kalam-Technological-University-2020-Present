@@ -3,111 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calender</title>
+    <title>String and Math functions</title>
     <style>
-        .selection {
+        div {
             text-align: center;
-            margin-bottom: 2em;
-            background-color:rgb(174, 179, 181);
-            width: 100%;   
+            border-bottom: 2px solid black;
+            padding-bottom: 2em;
         }
-        #year_get,#month_get{
-            padding:5px;
-            width:75%;
+
+        h2 {
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 2em;
+            width: 100%;
+            background-color: aqua;
         }
-        input{
-            padding: 5px;
+
+        table,
+        tr,
+        td,
+        th {
+            padding: 1em;
         }
-        .tabselection {
-            margin-left: auto;
-            margin-right: auto;
+
+        table {
             width: 100%;
         }
-       table{
-           padding: 5px;
-       }
-       tr{
-           
-       }
-       .selrow{
-         border: none;
-       }
-       td,th{
-           padding: 10px;
-           border: 1px solid black;
-       }
-       .selcol{
-        padding:0px;
-         border: none;
-       text-align: center;
-       }
-       #calender{
-           border-collapse: collapse;
-           margin-left: auto;
-            margin-right: auto;
-       }
-       #resetbtn{
-        background-color:red;
-           border: none;
-           color: white;
-       }
-       #subtn{
-           background-color:green;
-           border: none;
-           color: white;
-       }
-     
+
+        th {
+            text-align: left;
+        }
+
+        .selector {
+            float: left;
+            margin-left: 1em;
+        }
+        li{
+            text-align: left;
+        }
+        ul{
+            border: 1px solid red;
+        }
     </style>
 </head>
 
 <body>
-    <div class="selection">
-        <table class="tabselection" cellspacing="10">
+    <div>
+        <h2>String Functions</h2>
+        <table>
             <tbody>
-                <tr class="selrow">
-                    <td class="selcol"><input id="year_get" type="number" placeholder="year"> </td>
-                    <td class="selcol"><input id="month_get" type="number" placeholder="month"> </td>
+                <tr>
+                    <th>Enter a text</th>
+                    <td> <input type="text" id="input_srting" name="input_s"></td>
                 </tr>
-                <tr class="selrow">
-                    <td  colspan="2" class="selcol"><input onclick="generate()" type="button" id="subtn" value="Generate Calender"> </td>
+                <tr>
+                    <th>Search a text</th>
+                    <td> <input type="text" id="input_search" name="input_search"></td>
                 </tr>
-                <tr class="selrow">
-                    <td  colspan="2" class="selcol"><input type="reset" value="reset" id="resetbtn" onclick="location.reload();"> </td>
+                <tr>
+                    <th>Slice start</th>
+                    <td><input type="text" id="slice_s" name="slice_s"></td>
+                </tr>
+                <tr>
+                    <th>Slice end</th>
+                    <td><input type="text" id="slice_e" name="slice_e"></td>
+                </tr>
+                <tr>
+                    <th>Replace the word</th>
+                    <td><input type="text" id="replace_f"></td>
+                </tr>
+                <tr>
+                    <th>Replace with</th>
+                    <td><input type="text" id="replace_s"></td>
                 </tr>
             </tbody>
         </table>
-    </div>
-    <div id="content"> </div>
-</body>
-<script>
-    function generate() {
-        var init_content = "<table BORDER=1 id='calender'><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>"
-        var year_get = document.getElementById("year_get").value;
-        var month_get = document.getElementById("month_get").value;
-        month_get -=1;
 
-        var date = new Date(year_get,month_get);
-        var day = date.getDay();
-        for (var i = 0; i < day; i++) {
-            init_content += "<td></td>";
+
+        <input type="button" value="length" class="selector" onclick="string_func()">
+      
+        <br><br>
+        <ul id="output"> </ul>
+    </div>
+
+    <script>
+        function string_func() {
+            let input = document.getElementById('input_srting').value;
+            let search = document.getElementById('input_search').value;
+            let slice_s = document.getElementById('slice_s').value;
+            let slice_e = document.getElementById('slice_e').value;
+            let replace_f = document.getElementById('replace_f').value;
+            let replace_s = document.getElementById('replace_s').value;
+
+
+            let li_O = '<li>';
+            let li_C = '</li>';
+            let list_items;
+            list_items = li_O+'Length of string is  : '+input.length+li_C;
+            list_items += li_O+'First index of '+search+' is '+ input.indexOf(search) +li_C;
+            list_items += li_O+'Last index of '+search+' is '+ input.lastIndexOf(search) +li_C;
+            list_items += li_O+'Index with search starting position 5 of '+search+' is '+ input.indexOf(search,5) +li_C;
+            list_items += li_O+'Search '+search+' is '+ input.search(search) +li_C;
+            list_items += li_O+'Slice['+ slice_s+' : ] is '+ input.slice(slice_s) +li_C;
+            list_items += li_O+'Slice['+ slice_s+' : '+slice_e+'] is '+ input.slice(slice_s,slice_e) +li_C;
+            list_items += li_O+'Substring['+ slice_s+' : '+slice_e+']  is '+ input.substring(slice_s,slice_e) +li_C;
+            list_items += li_O+'Substr['+ slice_s+' :] is '+ input.substr(slice_s) +li_C;
+            list_items += li_O+'Substr['+ slice_s+' :] with length '+slice_e+' is '+ input.substr(slice_s,slice_e) +li_C;
+            list_items += li_O+'replace '+replace_f+' with '+replace_s+' is ' + input.replace(replace_f,replace_s) +li_C;
+            list_items += li_O+'Uppercase  :  '+ input.toUpperCase()+li_C;
+            list_items += li_O+'lowercase  :  '+ input.toLowerCase()+li_C;
+
+
+           // console.log(slice_e);
+            document.getElementById('output').innerHTML=(list_items);
+            
+        
         }
-        while (date.getMonth() == month_get) {
-            init_content += "<td>" + date.getDate() + "</td>";
-            if (date.getDay() % 7 == 6) {
-                init_content += "</tr><tr>";
-            }
-            date.setDate(date.getDate() + 1);
-        }
-        while(date.getDay() % 7 != 6 && date.getDay() % 7 != 0){
-            init_content += "<td></td>";
-            date.setDate(date.getDate() + 1);
-        }
-        if(date.getDay() % 7 > 0){
-            init_content += "<td></td></tr>";
-        }
-        init_content += "</table>"
-        document.getElementById("content").innerHTML = init_content;
-    }
-</script>
+    </script>
+</body>
 
 </html>
