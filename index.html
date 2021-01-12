@@ -163,14 +163,17 @@
             let list_items;
 
             list_items = li_O + 'Value of PI  : ' + Math.PI + li_C;
-            list_items += li_O + 'Round of  '+input+' is ' + Math.round(input) + li_C;
-            list_items += li_O + ''+input+' raise to '+power+' is ' + Math.pow(input,power) + li_C;
-            list_items += li_O + 'Square root of  '+input+' is ' + Math.sqrt(input) + li_C;
-            list_items += li_O + 'Absolute value  of  '+input+' is ' + Math.abs(input) + li_C;
-            list_items += li_O + 'Ceil value  of  '+input+' is ' + Math.ceil(input) + li_C;
-            list_items += li_O + 'Floor value  of  '+input+' is ' + Math.floor(input) + li_C;
-            list_items += li_O + 'Sin value  of  '+input+' is ' + Math.sin(input* Math.PI / 180) + li_C;
-            list_items += li_O + 'Cos value  of  '+input+' is ' + Math.cos(input* Math.PI / 180) + li_C;
+            list_items += li_O + 'Round of  '+input+' is : ' + Math.round(input) + li_C;
+            list_items += li_O + ''+input+' raise to '+power+' is : ' + Math.pow(input,power) + li_C;
+            list_items += li_O + 'Square root of  '+input+' is : ' + Math.sqrt(input) + li_C;
+            list_items += li_O + 'Absolute value  of  '+input+' is : ' + Math.abs(input) + li_C;
+            list_items += li_O + 'Ceil value  of  '+input+' is : ' + Math.ceil(input) + li_C;
+            list_items += li_O + 'Floor value  of  '+input+' is : ' + Math.floor(input) + li_C;
+            list_items += li_O + 'Sin value  of  '+input+' is : ' + Math.sin(input* Math.PI / 180) + li_C;
+            list_items += li_O + 'Cos value  of  '+input+' is : ' + Math.cos(input* Math.PI / 180) + li_C;
+            list_items += li_O + 'Minimum of (0, 150, 30, 20, -8, -200)    is : ' + Math.min(0, 150, 30, 20, -8, -200) + li_C;
+            list_items += li_O + 'Maximum of (0, 150, 30, 20, -8, -200)    is : ' + Math.max(0, 150, 30, 20, -8, -200) + li_C;
+            list_items += li_O + 'A Random number is : ' + Math.random() + li_C;
 
             document.getElementById('output_math').innerHTML = (list_items);
         }
