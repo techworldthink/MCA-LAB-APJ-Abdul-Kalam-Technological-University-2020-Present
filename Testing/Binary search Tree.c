@@ -29,7 +29,6 @@ struct node* insert(struct node* root,int value) {
   else if(value<root->data){
   	root->left = insert(root->left,value);
   }
-  return root;
 }
 
 // Inorder traversal
@@ -68,57 +67,12 @@ struct node* search(struct node* root, int key) {
   } 
 }
 
-struct node* minValueNode(struct node* node){
-    struct node* current = node;
- 
-    /* loop down to find the leftmost leaf */
-    while (current && current->left != NULL)
-        current = current->left;
- 
-    return current;
-}
-
-struct node* deleteNode(struct node* root, int key){
-    if (root == NULL)
-        return root;
- 
-    if (key < root->data)
-        root->left = deleteNode(root->left, key);
-    else if (key > root->data)
-        root->right = deleteNode(root->right, key);
-    else {
-        // node with only one child or no child
-        if (root->left == NULL) {
-            struct node* temp = root->right;
-            free(root);
-            return temp;
-        }
-        else if (root->right == NULL) {
-            struct node* temp = root->left;
-            free(root);
-            return temp;
-        }
-        // node with two children: 
-        // Get the inorder successor
-        // (smallest in the right subtree)
-        struct node* temp = minValueNode(root->right);
- 
-        // Copy the inorder 
-        // successor's content to this node
-        root->data = temp->data;
- 
-        // Delete the inorder successor
-        root->right = deleteNode(root->right, temp->data);
-    }
-    return root;
-}
-
 int main(){
 	int opt;
-	int value,searchv,key;
+	int value,searchv;
 	do{
 		printf("\n1)Create Root Node \n2)Insert Node\n3)Search\n");
-		printf("4)inorderTraversal \n5)preorderTraversal \n6)postorderTraversal \n7)Delete \n8)Quiet \n");
+		printf("4)inorderTraversal \n5)preorderTraversal \n6)postorderTraversal \n8)Quiet \n");
 		printf("Choose Option :: ");
 		scanf("%d",&opt);
 		switch(opt){
@@ -130,7 +84,7 @@ int main(){
 			case 2:
 				printf("\nEnter a number : ");
 				scanf("%d",&value);
-				root = insert(root,value);
+				insert(root,value);
 				break;
 			case 3:
 				printf("\nEnter a number : ");
@@ -151,11 +105,6 @@ int main(){
 				printf("\n..................................\n");
 				postorderTraversal(root);
 				printf("\n..................................\n");
-				break;
-			case 7:
-				printf("\nEnter a number to be deleted : ");
-				scanf("%d",&key);
-				deleteNode(root,key);
 				break;
 			defualt:
 				printf("Invalid option!");
