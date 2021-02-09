@@ -1,3 +1,4 @@
+import graphics
 from graphics import circle,rectangle
 from graphics.tdgraphics import cuboid,sphere
 from graphics.circle import *
