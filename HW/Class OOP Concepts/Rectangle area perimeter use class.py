@@ -4,14 +4,14 @@ class rectangle:
     __area = 0
     __perimeter = 0
     def __init__(self,length,width):
-        rectangle.__length = length
-        rectangle.__width = width
+        self.__length = length
+        self.__width = width
     def calc_area(self):
-        rectangle.__area = rectangle.__length*rectangle.__width
-        print(rectangle.__area)
+        self.__area = self.__length*self.__width
+        print("Area is  :",self.__area)
     def calc_perimeter(self):
-        rectangle.__perimeter = 2*(rectangle.__length+rectangle.__width)
-        print(rectangle.__perimeter)
+        self.__perimeter = 2*(self.__length+self.__width)
+        print("Perimeter is :",self.__perimeter)
 
 while(True):
     length = int(input("Enter length of the rectangle : "))
