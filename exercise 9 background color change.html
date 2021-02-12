@@ -23,13 +23,12 @@
 <div class="container">
     <input id="btn" type="button" value="Change background">
 </div>
-    <!--<input id="btn" style="height:50px; width:150px;" type="button" value="Change background" onclick="colorchange()">-->
-   
 
     <script>
         document.getElementById("btn").addEventListener("click", colorchange);
         function colorchange() {
-            var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            console.log(Math.random() * 10000000);
+            var color = '#' + Math.floor(Math.random() * 10000000).toString(16);
             document.body.style.background = color;
         }
     </script>

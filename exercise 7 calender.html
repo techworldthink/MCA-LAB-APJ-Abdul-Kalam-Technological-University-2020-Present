@@ -98,13 +98,16 @@
             }
             date.setDate(date.getDate() + 1);
         }
+        
         while(date.getDay() % 7 != 6 && date.getDay() % 7 != 0){
             init_content += "<td></td>";
             date.setDate(date.getDate() + 1);
         }
+        
         if(date.getDay() % 7 > 0){
             init_content += "<td></td></tr>";
         }
+
         init_content += "</table>"
         document.getElementById("content").innerHTML = init_content;
     }
