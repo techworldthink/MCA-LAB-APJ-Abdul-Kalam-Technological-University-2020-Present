@@ -8,6 +8,11 @@ class rectangle:
         self.__area = self.__length*self.__width
         #print("Area is  :",self.__area)
         return self.__area
+    def calc_perimeter(self):
+        self.__perimeter = 2*(self.__length+self.__width)
+        print("Perimeter is :",self.__perimeter)
+
+
  
   
 while(True):
