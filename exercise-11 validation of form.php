@@ -58,17 +58,20 @@
         </table>
     </form>
 <?php
-    $con = Mysqli_Connect("localhost","user","passcode","dbname");
-    $name = $_POST['fname'];  
-    $email = $_POST['email'];  
-    $mobile = $_POST['mob'];  
-    $user = $_POST['user'];  
-    $password = $_POST['password'];  
+    $con = Mysqli_Connect("localhost","root","","jobin");
 
     if(isset($_POST['submit'])){
-        $password = $_POST["password"];
+        $name = $_POST['fname'];  
+        $email = $_POST['email'];  
+        $mobile = $_POST['mob'];  
+        $user = $_POST['user'];  
+        $password = $_POST['password'];
+
         if($_POST['fname'] == ""){
             echo "<script>alert('Enter First Name !!')</script>";
+        }
+        else if(!preg_match("/^[a-zA-Z ]*$/",$name)){
+            echo "<script>alert('Enter Your  Name !!')</script>";
         }
         else if($_POST['email'] == ""){
             echo "<script>alert('Enter Email !!')</script>";
