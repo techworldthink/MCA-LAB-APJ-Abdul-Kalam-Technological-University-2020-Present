@@ -36,7 +36,7 @@ struct node* insert(struct node* root,int value) {
 void inorderTraversal(struct node* root) {
   if (root == NULL) return;
   inorderTraversal(root->left);
-  printf("%d ->", root->data);
+  printf("%d ->", root->data);                                                                                                                                                                                                                                                                                                                                   
   inorderTraversal(root->right);
 }
 
