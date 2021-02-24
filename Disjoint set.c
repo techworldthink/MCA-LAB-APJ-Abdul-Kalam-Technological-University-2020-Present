@@ -39,7 +39,7 @@ void unionSets(int a,int b){
 	struct node *rep1=find(a);
 	struct node *rep2=find(b);
 	if(rep1==NULL||rep2==NULL){
-		printf("Element not present in the DS\n");
+		printf("\nElement not present in the DS\n");
 		return;
 	}
 	if(rep1!=rep2){
@@ -71,55 +71,69 @@ void unionSets(int a,int b){
 	}
 }
 
+int search(int x){
+	int i;
+	struct node *tmp=(struct node *)malloc(sizeof(struct node));
+	for(i=0;i<countRoot;i++){
+		tmp=heads[i];
+		if(heads[i]->data==x)
+			return 1;	
+		while(tmp!=NULL){
+			if(tmp->data==x)
+				return 1;	
+			tmp=tmp->next;
+		}
+	}
+	return 0;
+}
+
 
 void main(){
 int choice,x,i,j,y,flag=0;
 	
-	printf("Menu\n1.Make Set\n2.Display set representatives\n3.Union\n4.Find Set\n5.Exit\n");
 	do{
-		printf("Enter your choice ");
+		printf("\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+		printf("\n.......MENU.......\n\n1.Make Set\n2.Display set representatives\n3.Union\n4.Find Set\n5.Exit\n");
+	
+		printf("Enter your choice :  ");
 		scanf("%d",&choice);
+		printf("\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 		switch(choice){
 		case 1:	
-			printf("Enter new element");
+			printf("\nEnter new element : ");
 			scanf("%d",&x);
-			for(i=0;i<countRoot;i++){
-				flag=0;
-				if(heads[i]->data==x){
-					printf("Element already present in the disjoint set DS\n");
-					flag=1;
-					break;
-				}
-			}
-			if(flag==0)
+			if(search(x)==1)
+				printf("\nElement already present in the disjoint set DS\n");
+			else
 				makeSet(x);
 			break;
 		case 2:
+			printf("\n");
 			for(i=0;i<countRoot;i++)
 				printf("%d ",heads[i]->data);
 			printf("\n");
 			break;
 		case 3:
-			printf("Enter first element");
+			printf("\nEnter first element : ");
 			scanf("%d",&x);
-			printf("Enter second element");
+			printf("\nEnter second element : ");
 			scanf("%d",&y);
 			unionSets(x,y);
 			break;
 		case 4:
-			printf("Enter the element");
+			printf("\nEnter the element");
 			scanf("%d",&x);
 			struct node *rep=(struct node *)malloc(sizeof(struct node));
 			rep=find(x);
 			if(rep==NULL)
-			printf("Element not present in the DS\n");
+			printf("\nElement not present in the DS\n");
 			else
-			printf("The representative of %d is %d\n",x,rep->data);
+			printf("\nThe representative of %d is %d\n",x,rep->data);
 			break;
 		case 5:
 			exit(0);
 		default: 
-			printf("Wrong choice\n");
+			printf("\nWrong choice\n");
 			break;
 		}
 	}
