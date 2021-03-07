@@ -71,8 +71,8 @@ void display_vertex(int pos){
 	printf("%c -> ",graph[pos]->data);
 }
 
-void bfs(struct vertex *new,int start){
-	if(!new){
+void bfs(){
+	if(!graph[0]){
 		printf("\nNothing to display\n");
 		return;
 	}
@@ -82,9 +82,9 @@ void bfs(struct vertex *new,int start){
 	
 	printf("\n|||||||||||||||||||||||||||||||\n");
 	
-	new->visited =true;
-	display_vertex(start);
-	enqueue(start);
+	graph[0]->visited =true;
+	display_vertex(0);
+	enqueue(0);
 	
 	while(!is_queue_empty()){
 		int pop_vertex = dequeue();
@@ -116,7 +116,6 @@ int main(){
 	char data;
 	int edge_1,edge_2;
 	int i, j;
-	int start;
 
     for(i = 0; i < MAX; i++)    // set adjacency 
       for(j = 0; j < MAX; j++) // matrix to 0
@@ -145,9 +144,7 @@ int main(){
 				}
 				break;
 			case 3:
-				printf("\nEnter starting vertex position : ");
-				scanf("%d",&start);
-				bfs(graph[start],start);
+				bfs();
 				break;
 			default:
 				printf("\nInvalid option try again !! ...");
