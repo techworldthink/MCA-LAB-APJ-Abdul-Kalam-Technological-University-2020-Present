@@ -74,7 +74,7 @@ void display_vertex(int pos){
 void dfs(){
 	int i;
 	int unvisited;
-	printf("\n|||||||||||||||||||||||||||||||\n");
+	
 	graph[0]->visited =true;
 	display_vertex(0);
 	push(0);
@@ -91,61 +91,35 @@ void dfs(){
 			push(unvisited);
 	    }
 	}
-	printf("\n|||||||||||||||||||||||||||||||\n");
+	
 	for(i=0;i<vertex_count;i++){
 		graph[i]->visited = false;
 	}
 }
 
-void show(){
-	int i;
-	printf("\n.................................\n");
-	for(i=0;i<vertex_count;i++){
-		printf("Edge postion of '%c' is %d\n",graph[i]->data,i);
-	}
-	printf(".................................\n");
-}
-
-
 int main(){
-	int opt;
-	char data;
-	int edge_1,edge_2;
 	int i, j;
 
-    for(i = 0; i < MAX; i++)    // set adjacency 
+   for(i = 0; i < MAX; i++)    // set adjacency 
       for(j = 0; j < MAX; j++) // matrix to 0
          adj_matrix[i][j] = 0;
+   
+
+	add_vertex('A');
+	add_vertex('B');
+	add_vertex('C');
+	add_vertex('D');
+	add_vertex('E');
 	
-	do{
-		printf("\n1)Add vertex \n2)Create edge \n3)Traversal \n0)Exit \nChoose option :: ");
-		scanf("%d",&opt);
-		switch(opt){
-			case 1:
-				printf("\nEnter data to be added to vertex : ");
-				scanf(" %c", &data);
-				add_vertex(data);
-				break;
-			case 2:
-	         	show();
-				printf("\nEnter edge starting : ");
-				scanf("%d",&edge_1);
-				printf("\nEnter edge ending : ");
-				scanf("%d",&edge_2);
-				if(vertex_count-1 < edge_1 || vertex_count-1 < edge_2){
-					printf("\nThere is no vertex !!\n");
-				}
-				else{
-					add_edge(edge_1,edge_2);
-				}
-				break;
-			case 3:
-				dfs();
-				break;
-			default:
-				printf("\nInvalid option try again !! ...");
-		}
-	}while(opt!=0);
+	
+	add_edge(0,1);
+	add_edge(0,2);
+	add_edge(0,3);
+	add_edge(1,4);
+	add_edge(2,4);
+	add_edge(3,4);
+	
+	dfs();
 	
 	return 0;
 }
