@@ -3,7 +3,6 @@
 #define MAX 10
 
 int main(){
-	int vertex_array[MAX],counter;
 	int vertex_count=0;
 	int row,column;
 	int cost_matrix[MAX][MAX];
@@ -15,21 +14,6 @@ int main(){
 	printf("Total no of vertex :: ");
 	scanf("%d",&vertex_count);
 	
-	printf("\n-- Enter vertex -- \n\n");
-	for(counter=1;counter<=vertex_count;counter++){
-		printf("vertex[%d] :: ",counter);
-		scanf("%d",&vertex_array[counter]);
-	}
-	
-	printf("\n--- Enter Cost matrix of size %d x %d  ---\n\n",vertex_count,vertex_count);
-	printf("\n\t-- format is --\n");
-	for(row=1;row<=vertex_count;row++){
-		for(column=1;column<=vertex_count;column++){
-			printf("x ");
-		}
-		printf("\n");
-	}
-	printf("\n-- MATRIX --\n\n");
 	//Get edge weight matrix from user	
 	for(row=1;row<=vertex_count;row++){
 		for(column=1;column<=vertex_count;column++){
@@ -40,7 +24,6 @@ int main(){
 		}
 	}
 	
-	printf("\n");
 	visited[1]=1;
 	edge_count = vertex_count-1;
 	
@@ -58,12 +41,12 @@ int main(){
 		}
 		
 		if(visited[row_no] == 0 || visited[column_no] ==0){
-			printf("\nEdge %d is (%d -> %d) with cost : %d ",count++,vertex_array[vertex1],vertex_array[vertex2],min_cost);
+			printf("\nEdge %d is (%d -> %d) with cost : %d ",count++,vertex1,vertex2,min_cost);
 			sum_cost = sum_cost + min_cost;
 			visited[column_no]=1;
 		}
 		cost_matrix[vertex1][vertex2] = cost_matrix[vertex2][vertex1] = 999;
 	}
-	printf("\n\nMinimum cost=%d",sum_cost); 
+	printf("\n Minimum cost=%d",sum_cost); 
 	return 0;
 }
