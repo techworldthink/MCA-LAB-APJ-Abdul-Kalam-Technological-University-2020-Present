@@ -7,9 +7,9 @@ public class employee {
     public void read(){
         Scanner sc= new Scanner(System.in);
         System.out.print("Enter ID : "); 
-        ID = sc.nextLine();;
+        ID = sc.nextLine();
         System.out.print("Enter Name : "); 
-        name = sc.nextLine();;
+        name = sc.nextLine();
         System.out.print("Enter monthly salary : "); 
         salary = sc.nextInt();
     }
