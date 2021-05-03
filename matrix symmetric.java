@@ -26,15 +26,15 @@ public class matrix {
 
         for (rc = 0; rc < this.row; rc++) {
             for (cc = 0; cc < this.column; cc++) {
-                transpose[cc][rc]= array[rc][cc];
+                transpose[cc][rc] = array[rc][cc];
             }
         }
 
         for (rc = 0; rc < this.row; rc++) {
-            for (cc = 0; cc < this.column; cc++) {  
-                    if (this.array[rc][cc] != transpose[rc][cc]) {
-                        flag = 1;
-                    }
+            for (cc = 0; cc < this.column; cc++) {
+                if (this.array[rc][cc] != transpose[rc][cc]) {
+                    flag = 1;
+                }
             }
         }
         if (flag == 0) {
