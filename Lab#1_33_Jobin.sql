@@ -345,6 +345,6 @@ VALUES (30,'Sandra','Taylor','Child',176);
 rename table departments to dept;
 alter table employees modify salary smallint;
 alter table employees add commission varchar(10);
-
+describe employees;
 
 
