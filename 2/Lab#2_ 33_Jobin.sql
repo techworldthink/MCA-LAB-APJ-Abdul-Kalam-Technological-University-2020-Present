@@ -12,8 +12,10 @@ SELECT first_name FROM employees WHERE hire_date BETWEEN '1995-01-01' AND '1997-
 SELECT job_title FROM jobs WHERE max_salary < 5000;
 SELECT lower(email) FROM employees;
 SELECT first_name FROM employees WHERE hire_date BETWEEN '1995-01-01' AND '1995-12-31';
-INSERT INTO employees(first_name,last_name,department_id) VALUES('Paul',' Newton',11);
+INSERT INTO employees(employee_id,first_name,last_name,department_id,email,job_id) VALUES(207,'Paul',' Newton',11,'email@gmail.com',12);
+SELECT * FROM employees ORDER BY employee_id DESC;
 DELETE FROM dept WHERE department_name='Shipping';
+SELECT * FROM dept;
 
 
 
