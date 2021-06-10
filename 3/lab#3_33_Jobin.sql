@@ -65,4 +65,37 @@ INSERT INTO prerequisite VALUES('CS1310','CS3320');
 #3. Retrievethelistofallcoursesandgradesof‘Smith’
 SELECT student.s_name,grade_report.g_grade,course.c_name FROM student INNER JOIN grade_report ON student.s_no=grade_report.g_stud_no INNER JOIN section ON grade_report.g_sec_identiy=section.s_identity INNER JOIN  course ON section.s_cno=course.c_no WHERE student.s_name='smith';
 
-                                               
+#4. List the names of students who took the section of the ‘Database’ course offered in fall2008andtheirgradesinthatsection.
+SELECT student.s_name,grade_report.g_grade,course.c_name FROM student INNER JOIN grade_report ON student.s_no=grade_report.g_stud_no INNER JOIN section ON grade_report.g_sec_identiy=section.s_identity INNER JOIN  course ON section.s_cno=course.c_no WHERE course.c_name='Database' AND section.s_sem='fall' AND section.s_year='08';
+
+#5. List the prerequisites of the ‘Database’ course.	
+SELECT prerequisite.p_pre_no FROM prerequisite INNER JOIN course ON prerequisite.p_course_no=course.c_no WHERE course.c_name='Database';
+
+#6. Retrieve the names of all senior students majoring in‘CS’(computerscience).
+select s_name from student where s_major='CS' and s_class=4;
+
+#7. Retrieve the names of all courses taught by Professor King in 2007 and 2008.
+SELECT course.c_name FROM section INNER JOIN course ON section.s_cno=course.c_no WHERE section.s_instructor='king' AND section.s_year IN('07','08'); 
+
+#8. For each section taught by Professor King, retrieve the course number,semester, year, and number of students who took the section
+SELECT section.s_cno,section.s_sem,section.s_year,count(DISTINCT grade_report.g_stud_no) FROM section INNER JOIN grade_report ON grade_report.g_sec_identiy=section.s_identity WHERE section.s_instructor='king' GROUP BY grade_report.g_sec_identiy;
+
+#9. Retrieve the name and transcript of each senior student (Class = 4)majoring in CS. A transcript includes course name, course number, credit hours, semester, year, and grade for each course completed by the student.
+SELECT student.s_name,course.c_name,course.c_no,course.c_credit,section.s_sem,section.s_year,grade_report.g_grade FROM student INNER JOIN grade_report ON grade_report.g_stud_no=student.s_no INNER JOIN section ON section.s_identity=grade_report.g_sec_identiy INNER JOIN course ON course.c_no=section.s_cno WHERE student.s_class=4;
+
+#10 Write SQL update statements to do the following on the database schema
+#A.Insertanewstudent,<‘Johnson’,25,1,‘Math’>,inthedatabase.
+INSERT INTO student VALUES(25,'johnson',1,'Math');		
+SELECT * FROM student;
+								
+#B.Change th eclass of student ‘Smith’ t o2.
+UPDATE student SET s_class=2 WHERE s_name='smith';
+SELECT * FROM student;
+
+#C.Insertanewcourse,<‘KnowledgeEngineering’,‘CS4390’,3,‘CS’>
+INSERT INTO course VALUES('CS4390','KnowledgeEngineering',3,'cs');
+SELECT * FROM course;
+
+#D.Delete therecord forthestudentwhose nameis ‘Smith’and whosestudent number is17.
+DELETE FROM student WHERE s_name='smith' AND s_no=17;
+SELECT * FROM student;
