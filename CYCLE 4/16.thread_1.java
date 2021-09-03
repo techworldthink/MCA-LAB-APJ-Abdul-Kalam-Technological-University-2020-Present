@@ -11,12 +11,12 @@ class Multiplication extends Thread {
 
 class Prime extends Thread {
     public void run() {
-        int count = 0, i, j, n;
+        int count = 0, i = 1, j, n, no = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("\n\nEnter value for N :");
         n = sc.nextInt();
         System.out.println("Prime Numbers are :");
-        for (i = 1; i <= n; i++) {
+        while (no != n) {
             count = 0;
             for (j = 2; j <= i / 2; j++) {
                 if (i % j == 0) {
@@ -24,8 +24,11 @@ class Prime extends Thread {
                     break;
                 }
             }
-            if (count == 0 && i != 1)
+            if (count == 0 && i != 1) {
                 System.out.print(i + "   ");
+                no++;
+            }
+            i++;
         }
     }
 }
