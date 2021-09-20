@@ -21,8 +21,22 @@
             line-height: 24px;
             font-family: Roboto, sans-serif;
         }
-        pre{
+
+        pre {
             overflow-x: auto;
+        }
+
+        dt {
+            color: red;
+            font-weight: 400;
+            font-family: roboto, sans-serif;
+        }
+
+        dd {
+            margin-top: 1em;
+            color: rgb(104, 101, 101);
+            font-weight: 400;
+            font-family: roboto, sans-serif;
         }
     </style>
 </head>
@@ -96,6 +110,174 @@
             }
         }
     </code></pre>
+    <h3>Type of Classes</h3>
+    <p>
+    <dl>
+        <dt>Static Class</dt>
+        <dd>
+            In Java, static is a keyword that manage objects in the memory. The static object belongs to the class
+            instead of the instance of the class.<br><br>
+            We can make a class static if and only if it is a nested class<br>
+            Nested static class does not require reference to the outer class.<br>
+            The class has only static members.<br>
+            It cannot access the member (non-static) of the outer class<br>
+            We cannot create an object of the static class.<br>
+            <br>
+            What good are static classes? A good use of a static class is in defining one-off, utility and/or library
+            classes where instantiation would not make sense. A great example is the Math class that contains some
+            mathematical constants such as PI and E and simply provides mathematical calculations. Requiring
+            instantiation in such a case would be unnecessary and confusing. See the Math class and source code. Notice
+            that it is final and all of its members are static. If Java allowed top-level classes to be declared static
+            then the Math class would indeed be static.<br><br>
+            ex: <b>double value_of_pi = Math.PI;  </b>
+            <br><br>
+            <b style="color: blue;">idea</b><br><br>
+            Java has no way of making a top-level class static but you can simulate a static class like this:
+            <ul>
+                <li>Declare your class final - Prevents extension of the class since extending a static class makes no sense </li>
+                <li>Make the constructor private - Prevents instantiation by client code as it makes no sense to instantiate a static class </li>
+                <li>Make all the members and functions of the class static - Since the class cannot be instantiated no instance methods can be called or instance fields accessed</li>
+                <li>Note that the compiler will not prevent you from declaring an instance (non-static) member. The issue will only show up if you attempt to call the instance member</li>
+            </ul>
+
+        </dd>
+        <dt>Final Class</dt>
+        <dd>
+            <ul>
+                <li>The word final means that cannot be changed.</li>
+                <li>The final class in Java can be declared using the final keyword.</li>
+                <li>Once we declare a class as final, the values remain the same throughout the program.</li>
+                <li>The purpose of the final class is to make the class immutable like the String class.</li>
+                <li>It is only a way to make the class immutable.</li>
+                <li>Remember that the final class cannot be extended.</li>
+                <li>It also prevents the class from being sub-classed.</li>
+            </ul>
+        </dd>
+        <dt>Abstract Class</dt>
+        <dd>
+            <ul>
+                <li>An abstract class is a that is declared with the keyword abstract.</li>
+                <li>The class may or may not contain abstract methods.</li>
+                <li>We cannot create an instance of an abstract class but it can be a subclass.</li>
+                <li>These classes are incomplete, so to complete the abstract class we should extend the abstract classes to a concrete class.</li>
+                <li>When we declare a subclass as abstract then it is necessary to provide the implementation of abstract methods.Therefore, the subclass must also be declared abstract.</li>
+                <li>We can achieve data hiding by using the abstract class.</li>
+            </ul>
+        </dd>
+        <dt>Concrete Class</dt>
+        <dd>
+            <ul>
+                <li>These are the regular Java classes.</li>
+            </ul>
+        </dd>
+        <dt>Singleton Class</dt>
+        <dd>
+            <ul>
+                <li>A class that has only an object at a time is known as a singleton class.</li>
+                <li>if we are trying to create an instance a second time, that newly created instance points to the first instance.</li>
+                <li> It is usually used to control access while dealing with the database connection and socket programming.</li>
+            </ul>
+            <pre><code>
+                class Singleton {
+                    private String objectState;
+                    private static Singleton instance = null;
+                
+                    private Singleton() throws Exception {
+                        this.objectState = "Javatpoint";
+                    }
+                
+                    public static Singleton getInstance() {
+                        if (instance == null) {
+                            try {
+                                instance = new Singleton();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        return instance;
+                    }
+                
+                    public String getObjectState() {
+                        return objectState;
+                    }
+                
+                    public void setObjectState(String objectState) {
+                        this.objectState = objectState;
+                    }
+                
+                    public static void main(String []arg){
+                        Singleton obj1 = getInstance();
+                        Singleton obj2 = getInstance();
+                        obj1.setObjectState("ONE");
+                        System.out.println(obj1.getObjectState());
+                        System.out.println(obj2.getObjectState());
+                    }
+                }
+                
+                
+            </code></pre>
+        </dd>
+        <dt>POJO Class</dt>
+        <dd>
+            <ul>
+                <li>POJO stands for Plain Old Java Object.</li>
+                <li>All instance variables must be private.</li>
+                <li>The getter/ setter methods must be public..</li>
+                <li></li>
+            </ul>
+        </dd>
+        <dt>Inner Class</dt>
+        <dd>
+            Java allows us to define a class within a class and such classes are known as nested classes. It is used to group the classes logically and to achieve encapsulation. The outer class members (including private) can be accessed by the inner class.
+            <pre><code>
+                class OuterClass  {    
+                    //code    
+                    class NestedClass  {    
+                        //code    
+                    }    
+                } 
+            </code></pre>
+            <ul>
+                <li>Static Nested class</li>
+                <li>Non-static Nested Class</li>
+            </ul>
+            <br>
+            Types 
+            <ul>
+                <li>Local Classes or Method Local Inner Class</li>
+                <pre><code>
+                    class OuterClass  {    
+                        //code    
+                        class NestedClass  {    
+                            //code    
+                        }    
+                    } 
+                </code></pre>
+                <li>Anonymous Classes or Anonymous Inner Class (By using an interface, By declaring the class concrete and abstract)</li>
+                <pre><code>
+                    interface Score {   
+                        //code
+                    }  
+
+                    class OuterClass  {    
+                        //code    
+                        Score s = new Score()  {    
+                            //code    
+                        }    
+                    } 
+                </code></pre>
+            </ul>
+        </dd>
+        <dt>Wrapper Class</dt>
+        <dd>
+            <ul>
+                <li>In Java, the term wrapper class represents a collection of Java classes that objectify the primitive type of Java</li>
+                <li>It means that for each primitive type there is a corresponding wrapper class.</li>
+                <li>The wrapper classes are used to perform the conversion from a primitive type to an object and vice-versa.</li>
+            </ul>
+        </dd>
+    </dl>
+    </p>
 </body>
 
 </html>
