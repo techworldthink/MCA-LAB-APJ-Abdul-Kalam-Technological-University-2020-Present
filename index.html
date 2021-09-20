@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 1em;
+
+        }
+
+        h3 {
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 24px;
+            font-family: Roboto, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br><br>
+    <h3>Abstraction in OOPS</h3>
+    <p>
+        Abstraction is the process of hiding the internal details of an application from the outer world. Abstraction is
+        used to describe things in simple terms. It’s used to create a boundary between the application and the client
+        programs.
+        <br><br>
+        Abstraction defines a model to create an application component.
+        Objects are the building blocks of Object-Oriented Programming. An object contains some properties and methods.
+        We can hide them from the outer world through access modifiers. We can provide access only for required
+        functions and properties to the other programs. This is the general procedure to implement abstraction in OOPS.
+        <br><br>
+        There are two types of abstraction.
+        <br><br>
+        1. Data Abstraction
+        <br>
+        2. Process Abstraction
+    </p>
+    <h3>Class in JAVA</h3>
+    <pre><code>
+        class class_name{
+            public static void main(String []args){
+                class_name object_name = new class_name();
+            }
+        }
+    </code></pre>
+    <h3>Seperate Main Class in JAVA</h3>
+    <pre><code>
+        class ABC{
+
+        }
+
+        class Main{
+            public static void main(String []args){
+                ABC object_name = new ABC();
+            }
+        }
+    </code></pre>
+    <h3>Nested Class in JAVA</h3>
+    <pre><code>
+        class ABC{
+            class XYZ{
+
+            }
+        }
+
+        class Main{
+            public static void main(String []args){
+                ABC O1 = new ABC();
+                ABC.XYZ  O2  = O1.new XYZ();
+            }
+        }
+    </code></pre>
+    <h3>Nested Class in JAVA (Static)</h3>
+    <pre><code>
+        class ABC{
+            static class XYZ{
+
+            }
+        }
+
+        class Main{
+            public static void main(String []args){
+                ABC O1 = new ABC();
+                ABC.XYZ  O2  = new XYZ();
+            }
+        }
+    </code></pre>
+</body>
+
+</html>
