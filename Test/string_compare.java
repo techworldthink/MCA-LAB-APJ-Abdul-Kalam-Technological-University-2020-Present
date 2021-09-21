@@ -7,5 +7,10 @@ public class string_compare {
         System.out.println(a.compareTo(a));
         String A = "A";
         System.out.println(a.compareTo(A));
+
+        System.out.println(a.equals(A));
+        System.out.println(a.equals(a));
+
+        System.out.println(a==b);
     }
 }

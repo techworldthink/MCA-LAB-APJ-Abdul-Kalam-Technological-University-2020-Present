@@ -286,7 +286,7 @@
 
         int   data2[]   = new int[3];
     </code></pre>
-    <h3>String Compare</h3>
+    <h3>String Compare & Equals</h3>
     <pre><code>
         public class string_compare {
             public static void main(String[] args){
@@ -297,6 +297,11 @@
                 System.out.println(a.compareTo(a));
                 String A = "A";
                 System.out.println(a.compareTo(A));
+
+                System.out.println(a.equals(A));
+                System.out.println(a.equals(a));
+
+                System.out.println(a==b);
             }
         }
 
@@ -331,7 +336,7 @@
             public static void main(String []arg){
                 String sentannce = "one two three one";
                 String[] arrOfStr = sentannce.split(" ");
-                Set<String> set = new HashSet<String>(Arrays.asList(arrOfStr));
+                Set&lt;String&gt; set = new HashSet&lt;String&gt;(Arrays.asList(arrOfStr));
                 
                 for(String i:set){
                     System.out.println(i);
@@ -339,6 +344,49 @@
                 
             }
         }
+    </code></pre>
+    <h3>Java Exception</h3>
+    <pre><code>
+
+        class Main {
+            public static void main(String args[]) {
+                try {
+                    int a = 1 / 0;
+                } catch (ArithmeticException ex) {
+                    System.out.print(ex.getMessage());
+                }
+            }
+        
+        }
+           
+    </code></pre>
+    <h3>Java Custom Exception</h3>
+    <pre><code>
+
+        class Main {
+            public static void main(String args[]) {
+                int temp = -1;
+        
+                try {
+                    if (temp > 0) {
+                        System.out.println(" - positive number");
+                    } else {
+                        throw new MyException(Integer.toString(temp));
+                    }
+                } catch (MyException ex) {
+                    System.out.print(ex.getMessage());
+                    System.out.println(" - Not a positive number");
+                }
+            }
+        
+        }
+        
+        class MyException extends Exception {
+            public MyException(String value) {
+                super(value);
+            }
+        }   
+
     </code></pre>
 </body>
 
