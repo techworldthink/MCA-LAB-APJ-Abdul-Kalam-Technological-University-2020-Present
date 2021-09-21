@@ -278,6 +278,68 @@
         </dd>
     </dl>
     </p>
+    <h3>Array Define Methods</h3>
+    <pre><code>
+        int[] data      = new int[3];
+
+        int   []data1   = new int[3];
+
+        int   data2[]   = new int[3];
+    </code></pre>
+    <h3>String Compare</h3>
+    <pre><code>
+        public class string_compare {
+            public static void main(String[] args){
+                String a = "a";
+                String b = "b";
+                System.out.println(a.compareTo(b));
+                System.out.println(b.compareTo(a));
+                System.out.println(a.compareTo(a));
+                String A = "A";
+                System.out.println(a.compareTo(A));
+            }
+        }
+
+        // Output 
+        // -1
+        // 1
+        // 0
+        // 32
+    </code></pre>
+    <h3>Array Define Methods</h3>
+    <pre><code>
+        int[] data      = new int[3];
+
+        int   []data1   = new int[3];
+
+        int   data2[]   = new int[3];
+    </code></pre>
+    <h3>Array of Objects</h3>
+    <pre><code>
+        employee emp[] = new employee[3];
+        for(i=0;i&lt;3;i++){
+            emp[i] = new employee();
+        }
+    </code></pre>
+    <h3>Set of Objects</h3>
+    <pre><code>
+        import java.util.Set;
+        import java.util.HashSet;
+        import java.util.Arrays;
+        
+        public class set {
+            public static void main(String []arg){
+                String sentannce = "one two three one";
+                String[] arrOfStr = sentannce.split(" ");
+                Set<String> set = new HashSet<String>(Arrays.asList(arrOfStr));
+                
+                for(String i:set){
+                    System.out.println(i);
+                }
+                
+            }
+        }
+    </code></pre>
 </body>
 
 </html>

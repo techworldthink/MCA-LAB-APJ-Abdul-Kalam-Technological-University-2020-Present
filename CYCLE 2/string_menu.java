@@ -1,6 +1,5 @@
 import java.util.*;
 
-import javax.imageio.plugins.tiff.ExifTIFFTagSet;
 class stringMenu {
     String sentance;
 
@@ -63,7 +62,7 @@ class stringMenu {
         String temp;
         String[] arrOfStr = sentannce.split(" ");
         
-        for(int i=0;i<arrOfStr.length;i++){;
+        for(int i=0;i<arrOfStr.length;i++){
             temp="";
             String[] temparray = arrOfStr[i].split("");
             for(int j=arrOfStr[i].length()-1;j>=0;j--){
