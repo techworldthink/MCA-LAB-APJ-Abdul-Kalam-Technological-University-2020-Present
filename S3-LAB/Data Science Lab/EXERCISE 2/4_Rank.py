@@ -13,12 +13,12 @@ def create_matrix(mc):
     array_1 = array_1.reshape(row,column)
     print("\nARRAY "+str(mc))
     print(array_1)
-    print("\nTrase : ")
+    print("\nRank : ")
     return array_1
 
 
 
-print(create_matrix(1).trace())
+print(np.linalg.matrix_rank(create_matrix(1)))
 
 
 
