@@ -1,0 +1,1 @@
+SELECT student.s_name,grade_report.g_grade,course.c_name FROM student INNER JOIN grade_report ON student.s_no=grade_report.g_stud_no INNER JOIN section ON grade_report.g_sec_identiy=section.s_identity INNER JOIN  course ON section.s_cno=course.c_no WHERE student.s_name='smith';
