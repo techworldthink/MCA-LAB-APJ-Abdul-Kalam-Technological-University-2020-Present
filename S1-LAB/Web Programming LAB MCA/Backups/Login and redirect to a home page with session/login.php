@@ -30,6 +30,7 @@
     if(isset($_POST['login'])){
         $user = $_POST['uname'];
         $passcode = $_POST['passcode'];
+        
         $login_query = "select * from user_login where user='$user'and pass='$passcode'";
         $login_result = mysqli_query($con,$login_query);
         $login_vlaues = mysqli_fetch_array($login_result);
