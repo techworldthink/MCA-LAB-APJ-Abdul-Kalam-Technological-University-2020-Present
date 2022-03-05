@@ -1,0 +1,9 @@
+download a bg of your choice(here "bg.jpg")
+drag and drop bg.jpg to "drawable" folder
+
+take xml file
+tap on "design"
+go to "attributes"(right most part)
+go to "all attributes"
+click the button nxt to "background" 
+In drawable tab, select bg.jpg, and click on "ok"

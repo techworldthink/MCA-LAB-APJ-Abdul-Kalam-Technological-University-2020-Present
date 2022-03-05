@@ -1,0 +1,3 @@
+download an mp4 of your choice
+rt click on res folder-->new-->directory-->give a name (here "raw")
+paste or drag and drop the mp4 file (here vbn.mp4 is the file being used)

@@ -1,0 +1,3 @@
+download the mp3 to be played
+right click on res folder-> new--> directory--> type name (here we gave "raw")
+inside raw -> paste the corresponding mp3 file (here it is saved as abc.mp3)

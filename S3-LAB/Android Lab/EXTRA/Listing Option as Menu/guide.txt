@@ -1,0 +1,5 @@
+output
+here on clicking "3 vertical dots" gives a list of options, where each option serves a purpose
+
+rt click on res folder --> new --> directory -->name it (here "menu")
+rt click on "menu" --> new -->Menu Resource file -->name it (here "menures")
