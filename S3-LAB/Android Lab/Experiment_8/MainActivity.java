@@ -38,4 +38,5 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Toast.makeText(this,"onDestroy",Toast.LENGTH_SHORT).show();
     }
+    
 }
