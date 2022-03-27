@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         total=0.0;
     }
 
-    // copy content of edittext to textview
+    // CheckBox onClick event handle
     public void checkClick(View view){
         CheckBox checkbox = (CheckBox)view;
         boolean  ischeck = checkbox.isChecked();

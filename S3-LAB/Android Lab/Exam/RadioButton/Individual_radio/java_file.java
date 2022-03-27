@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         select=0;
     }
 
-    // copy content of edittext to textview
+    // CheckBox onClick event handle
     public void radioClick(View view){
         RadioButton radiobox = (RadioButton)view;
         boolean  ischeck = radiobox.isChecked();
