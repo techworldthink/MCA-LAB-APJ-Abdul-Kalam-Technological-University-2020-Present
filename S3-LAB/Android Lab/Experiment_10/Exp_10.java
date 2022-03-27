@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+        //schedule the timer, after the first 0ms the TimerTask will run every 100ms
         t.schedule(tt,0,100);
     }
 }
