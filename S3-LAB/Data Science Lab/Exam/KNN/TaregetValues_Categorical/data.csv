@@ -1,0 +1,11 @@
+name,gives_birth,aquatic_animal,aerial_animal,has_legs,class_label
+human,1,0,0,1,mammal
+python,0,0,0,0,reptile
+salmon,0,1,0,0,fish
+frog,0,2,0,1,ampbibian
+bat,1,0,1,1,bird
+pigeon,0,0,1,1,bird
+cat,1,0,0,1,mammal
+shark,1,1,0,0,fish
+turtle,0,2,0,1,amphibian
+salamander,0,2,0,1,amphibian
