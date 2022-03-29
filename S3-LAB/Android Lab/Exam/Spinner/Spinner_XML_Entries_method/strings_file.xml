@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">pro</string>
+    <string-array name="month_list">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+    </string-array>
+</resources>
