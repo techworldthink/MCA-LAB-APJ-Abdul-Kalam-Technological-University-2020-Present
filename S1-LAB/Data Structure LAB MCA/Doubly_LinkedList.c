@@ -155,6 +155,7 @@ void display_reverse(){
 }
 
 void search(){
+  int count = 1;
   if(head == NULL)
     printf("\n\t\tLinked List is Empty!!");
   else{
@@ -165,9 +166,10 @@ void search(){
     printf("\t\t");
     do{
       if(link->data==data){
-        printf("\n\t\tThe number is found in the linked list!!");
+        printf("\\n\t\tThe number is found in the linked list!! %d and position is %d", link->data, count");
         return;
       }
+      count++;
       link = link->next;
     }while(link != NULL);
     printf("\n\t\tThe number is not found in the linked list!!");
